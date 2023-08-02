@@ -33,7 +33,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git branch gh-pages
-          git add .github
+          git add .github/workflows/githubpages.yaml
           git add app
           git commit -m "Added Worflow and App to gh-pages"
           git push -u origin gh-pages
