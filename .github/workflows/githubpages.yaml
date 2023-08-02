@@ -41,7 +41,7 @@ jobs:
         uses: "finnp/create-file-action@master"
         env:
           FILE_NAME: "public/.nojekyll"
-          FILE_DATA: ""
+          FILE_DATA: " "
 
       - name: Build The App
         run: npm run build --if-present
