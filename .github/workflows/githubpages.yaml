@@ -37,14 +37,14 @@ jobs:
       - name: Clean Install
         run: npm ci
 
+      - name: Build The App
+        run: npm run build --if-present
+
       - name: Add .nojekyll File
         uses: "finnp/create-file-action@master"
         env:
-          FILE_NAME: "public/.nojekyll"
+          FILE_NAME: "./app/dist/.nojekyll"
           FILE_DATA: " "
-
-      - name: Build The App
-        run: npm run build --if-present
 
       - name: Push To gh-pages
         uses: s0/git-publish-subdir-action@develop
