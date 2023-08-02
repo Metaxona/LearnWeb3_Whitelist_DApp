@@ -31,7 +31,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Gets The Repository Code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       
       - name: Setup Node V ${{ matrix.node-version }}
         uses: actions/setup-node@v2
