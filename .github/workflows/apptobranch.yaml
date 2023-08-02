@@ -27,20 +27,29 @@ jobs:
       - name: Gets The Repository Code
         uses: actions/checkout@v3
 
-      - name: Push App To gh-pages
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: gh-pages
-          FOLDER: ./app 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "Move App To gh-pagess: ({sha}) {msg}"
+      - name: add commit and push workflow and app to gh-pages
+        run: |
+          git branch gh-pages
+          git add .github
+          git add app
+          git commit -m "Added Worflow and App to gh-pages"
+          git push -u origin gh-pages
 
-      - name: Push workflow To gh-pages
-        uses: s0/git-publish-subdir-action@develop
-        env:
-          REPO: self
-          BRANCH: gh-pages
-          FOLDER: .github 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MESSAGE: "Move App To gh-pagess: ({sha}) {msg}"
+      # - name: Push App To gh-pages
+      #   uses: s0/git-publish-subdir-action@develop
+      #   env:
+      #     REPO: self
+      #     BRANCH: gh-pages
+      #     FOLDER: ./app 
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     MESSAGE: "Move App To gh-pagess: ({sha}) {msg}"
+
+      # - name: Push workflow To gh-pages
+      #   uses: s0/git-publish-subdir-action@develop
+      #   env:
+      #     REPO: self
+      #     BRANCH: gh-pages
+      #     FOLDER: .github 
+      #     TARGET_DIR: .github
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     MESSAGE: "Move App To gh-pagess: ({sha}) {msg}"
