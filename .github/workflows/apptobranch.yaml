@@ -35,3 +35,12 @@ jobs:
           FOLDER: ./app 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Move App To gh-pagess: ({sha}) {msg}"
+
+      - name: Push workflow To gh-pages
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: .github 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Move App To gh-pagess: ({sha}) {msg}"
