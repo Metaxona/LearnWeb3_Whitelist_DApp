@@ -29,6 +29,9 @@ jobs:
 
       - name: add commit and push workflow and app to gh-pages
         run: |
+          git --version
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
           git branch gh-pages
           git add .github
           git add app
