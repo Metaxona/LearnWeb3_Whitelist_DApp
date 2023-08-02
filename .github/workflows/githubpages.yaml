@@ -46,6 +46,5 @@ jobs:
           REPO: self
           BRANCH: gh-pages
           FOLDER: ./app/dist 
-          TARGET_DIR: docs
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Build: ({sha}) {msg}"
