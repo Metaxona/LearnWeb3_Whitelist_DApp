@@ -43,7 +43,7 @@ jobs:
       - name: Add .nojekyll File
         uses: "finnp/create-file-action@master"
         env:
-          FILE_NAME: "./app/dist/.nojekyll"
+          FILE_NAME: "./app/dist/assets/.nojekyll"
           FILE_DATA: " "
 
       - name: Push To gh-pages
