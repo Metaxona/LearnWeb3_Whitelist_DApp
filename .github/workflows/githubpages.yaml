@@ -37,7 +37,7 @@ jobs:
       - name: Clean Install
         run: npm ci
 
-      - name: Add .nojekyll
+      - name: Add .nojekyll File
         uses: "finnp/create-file-action@master"
         env:
           FILE_NAME: "public/.nojekyll"
