@@ -1,0 +1,37 @@
+name: Push App To gh-pages Branch
+
+on:
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
+    
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      
+      - name: Gets The Repository Code
+        uses: actions/checkout@v3
+
+      - name: Push App To gh-pages
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: ./app 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MESSAGE: "Move App To gh-pagess: ({sha}) {msg}"
