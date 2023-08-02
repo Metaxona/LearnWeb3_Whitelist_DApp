@@ -37,6 +37,9 @@ jobs:
       - name: Clean Install
         run: npm ci
 
+      - name: Add .nojekyll Before Building
+        run: touch ./src/public/.nojekyll
+
       - name: Build The App
         run: npm run build --if-present
 
