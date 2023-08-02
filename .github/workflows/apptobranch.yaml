@@ -27,7 +27,7 @@ jobs:
       - name: add commit and push workflow and app to gh-pages
         run: |
           mkdir all
-          mv app all
+          mv -v app/* all
           mv .github all
 
       - name: Push App To gh-pages
