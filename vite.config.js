@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: 'https://metaxona.com/LearnWeb3_Whitelist_DApp/',
   plugins: [react()],
 })
