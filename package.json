@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=https://metaxona.com/LearnWeb3_Whitelist_DApp/",
+    "build": "vite build --base=/LearnWeb3_Whitelist_DApp/",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
